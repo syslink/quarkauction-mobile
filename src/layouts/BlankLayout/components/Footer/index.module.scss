@@ -1,0 +1,42 @@
+.container {
+  width: 150%;
+  height: 150%;
+  padding: 20px 0 0 0;
+  padding-left: 0px;
+  color: #fff;
+  background: rgb(27, 20, 136);
+  margin-top: 50px;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #00C4FF;
+}
+
+.link {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.qrcode {
+  width: 160px;
+  border-radius: 4px;
+}
+
+.copyRight {
+  text-align: center;
+}
+
+.imgItem {
+  margin-right: 15px;
+  height: 15px;
+  weight: 15px;
+}
