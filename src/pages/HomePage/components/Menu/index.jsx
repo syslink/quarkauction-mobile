@@ -22,10 +22,12 @@ export default class MyTokens extends Component {
 
   showTokenAuction = () => {
     eventProxy.trigger('menuSelector', 'auction');
+    eventProxy.trigger('closeMenu', 'closeMenu');
   }
 
   showMyTokens = () => {
     eventProxy.trigger('menuSelector', 'myTokens');
+    eventProxy.trigger('closeMenu', 'closeMenu');
   }
 
   render() {

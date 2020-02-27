@@ -14,6 +14,7 @@ export default class HomePage extends Component {
       start: false,
       paused: false,
       menuType: 'auction',
+      historyMenuType: 'auction',
     };
     
     const start = cookie.load('start') == 'true';
@@ -25,8 +26,13 @@ export default class HomePage extends Component {
   }
   componentDidMount = () => {
     eventProxy.on('menuSelector', (menuType) => {
-      this.setState({menuType});
-    })
+      if (menuType == 'closeMenu') {
+        this.setState({menuType: this.state.historyMenuType});
+      } else {
+        this.state.historyMenuType = this.state.menuType;
+        this.setState({menuType});
+      }
+    });
   }
   
   render() {
@@ -44,9 +50,13 @@ export default class HomePage extends Component {
                 <AuctionedTokens start={this.state.start}/>
               </div>
                 :
-              <div>
-                <Menu />
-              </div>
+              (this.state.menuType == 'openMenu' ? 
+                <div>
+                  <Menu />
+                </div>
+                 :
+                ''
+              )
              )
         }
       </div>

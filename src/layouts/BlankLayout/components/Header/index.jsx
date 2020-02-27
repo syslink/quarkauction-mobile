@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Grid, Button } from '@alifd/next';
+import { Search, Grid, Button, Icon } from '@alifd/next';
 import eventProxy from '../../../../utils/eventProxy';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 
@@ -22,7 +22,9 @@ export default class Header extends Component {
   }
 
   componentDidMount = () => {
-
+    eventProxy.on('closeMenu', (closeMenu) => {
+      this.setState({symbolName: 'menu'});
+    });
   }
 
   
@@ -32,11 +34,12 @@ export default class Header extends Component {
 
   showMyTokensOrAuction = () => {
     if (this.state.symbolName == 'menu') {
-      this.setState({symbolName: 'cross'});
+      this.setState({symbolName: 'close'});
+      eventProxy.trigger('menuSelector', 'openMenu');
     } else {
       this.setState({symbolName: 'menu'});
+      eventProxy.trigger('menuSelector', 'closeMenu');
     }
-    eventProxy.trigger('menuSelector', 'menuSelf');
   }
 
   render () {
@@ -52,7 +55,9 @@ export default class Header extends Component {
         </Col>
         <Col>
           <Button text onClick={this.showMyTokensOrAuction.bind(this)}>
-            <FoundationSymbol type={this.state.symbolName} size="large" />
+            {
+              this.state.symbolName == 'menu' ? <FoundationSymbol type='menu' size="large" /> : <Icon  type='close' size="large" />
+            }
           </Button>
         </Col>
       </Row>
