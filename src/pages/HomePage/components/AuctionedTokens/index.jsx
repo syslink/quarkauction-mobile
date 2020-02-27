@@ -40,7 +40,7 @@ export default class AuctionedTokenData extends Component {
   render() {
     return (
       <div>
-        <Row wrap justify="space-around" align="center" style={{width: '100%', margin: '20px'}}>
+        <Row wrap justify="space-around" align="center" style={{margin: '20px'}}>
           {
           this.state.tokenData.map(tokenInfo =>
             <Col span="24" align='start' style={{marginBottom: '20px'}}>

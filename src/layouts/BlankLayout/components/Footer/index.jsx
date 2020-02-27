@@ -19,17 +19,17 @@ const social10 = require('./images/10.png');
 export default function Footer() {
   return (
       <div className={styles.container}>
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>Technology</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>Developer Portal</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Whitepaper</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Boson Consensus</a>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>Mining Handbook</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Mainnet</a>
@@ -37,10 +37,10 @@ export default function Footer() {
           <a className={styles.link}>QPocket</a>
         </Row>
         
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>Resources</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>News</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Media</a>
@@ -52,19 +52,19 @@ export default function Footer() {
           <a className={styles.link}>Community</a>
         </Row>
         
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>Contact</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>Career@quarkchain.org</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>support@quarkchain.org</a>
         </Row>
         
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>About Us</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>Team</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Advisors</a>
@@ -74,10 +74,10 @@ export default function Footer() {
           <a className={styles.link}>Careers</a>
         </Row>
         
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>Other</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a className={styles.link}>Terms of use</a>
           <div className={styles.link}>|</div>
           <a className={styles.link}>Privacy Policy</a>
@@ -85,10 +85,10 @@ export default function Footer() {
           <a className={styles.link}>Token Distribution</a>
         </Row>
         
-        <Row justify="start"  style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start"  style={{marginLeft: '20px'}}>
           <h3 className={styles.title}>Social Media</h3>
         </Row>
-        <Row justify="start" style={{width: '100%', marginLeft: '20px'}}>
+        <Row justify="start" style={{marginLeft: '20px'}}>
           <a href='/'><img src={social1} className={styles.imgItem}/></a>
           <a href='/'><img src={social2} className={styles.imgItem}/></a>
           <a href='/'><img src={social3} className={styles.imgItem}/></a>
