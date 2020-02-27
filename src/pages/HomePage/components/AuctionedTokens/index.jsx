@@ -43,7 +43,7 @@ export default class AuctionedTokenData extends Component {
         <Row wrap justify="space-around" align="center" style={{margin: '20px'}}>
           {
           this.state.tokenData.map(tokenInfo =>
-            <Col span="24" align='start' style={{marginBottom: '20px'}}>
+            <Col span="24" align='center' style={{marginBottom: '20px'}}>
               <div className={styles.content}>
                 <li className={styles.navItem}>
                   <div className={styles.desc}>Token Name:</div>
