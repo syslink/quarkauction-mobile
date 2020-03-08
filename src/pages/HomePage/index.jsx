@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import AuctionedTokens from './components/AuctionedTokens';
 import MyTokens from './components/MyTokens';
 import Menu from './components/Menu';
+import Exchange from './components/Exchange';
 import eventProxy from '../../utils/eventProxy';
 
 export default class HomePage extends Component {
@@ -36,29 +37,26 @@ export default class HomePage extends Component {
   }
   
   render() {
+    var displayBody;
+    switch(this.state.menuType) {
+      case 'myTokens':
+        displayBody = <div> <MyTokens /> </div>;
+        break;
+      case 'auction':
+        displayBody = <div> 
+                        <Banner start={this.state.start} paused={this.state.paused}/> 
+                        <AuctionedTokens start={this.state.start}/>
+                      </div>;
+        break;
+      case 'openMenu':
+        displayBody = <div> <Menu /> </div>;
+        break;
+      default:
+        displayBody = <div> <Exchange tokenInfo={this.state.menuType}/> </div>;
+    }
     return (
       <div style={{width: '150%'}}>
-        {
-          this.state.menuType == 'myTokens' ? 
-            <div>
-              <MyTokens />
-            </div>
-              :
-            (this.state.menuType == 'auction' ?
-              <div>
-                <Banner start={this.state.start} paused={this.state.paused}/>
-                <AuctionedTokens start={this.state.start}/>
-              </div>
-                :
-              (this.state.menuType == 'openMenu' ? 
-                <div>
-                  <Menu />
-                </div>
-                 :
-                ''
-              )
-             )
-        }
+        {displayBody}
       </div>
     );
   }

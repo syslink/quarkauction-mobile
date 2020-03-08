@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Dialog, Input, Grid  } from '@alifd/next';
 import styles from './index.module.scss';
+import eventProxy from '../../../../utils/eventProxy';
 
 const { Row, Col } = Grid;
 
@@ -12,13 +13,13 @@ export default class MyTokens extends Component {
       tokenData: [],
       mintTokenVisible: false,
       mintTokenFooter: (<view style={{marginRight: '40px', marginBottom: '80px'}}>
-        <Button type='secondary' style={{ borderRadius: '100px', border: '2px solid #00C4FF', backgroundColor: '#00C4FF', 
-          width: '120px', height: '50px', fontSize: '20px',
+        <Button type='secondary' style={{ borderRadius: '30px', border: '2px solid #00C4FF', backgroundColor: '#00C4FF', 
+          width: '120px', height: '60px', fontSize: '20px',
           color: '#FFFFFF', marginRight: '20px'}} onClick={() => this.setState({mintTokenVisible: false})}>                  
           Cancel
         </Button>
-        <Button type='secondary' style={{ borderRadius: '100px', border: '2px solid #00C4FF', backgroundColor: '#00C4FF', 
-          width: '120px', height: '50px', fontSize: '20px',
+        <Button type='secondary' style={{ borderRadius: '30px', border: '2px solid #00C4FF', backgroundColor: '#00C4FF', 
+          width: '120px', height: '60px', fontSize: '20px',
           color: '#FFFFFF'}} onClick={() => this.setState({mintTokenVisible: false})}>                  
           OK
         </Button>
@@ -47,13 +48,21 @@ export default class MyTokens extends Component {
   mintToken = () => {
     this.setState({mintTokenVisible: true});
   }
-  
+
+  showExchange = (tokenInfo) => {
+    eventProxy.trigger('menuSelector', tokenInfo);
+  }
+
   render() {
     let displayData = [];
-    if (this.state.tokenData.length > 1) {
+    if (this.state.tokenData.length > 0) {
         displayData = this.state.tokenData.map(tokenInfo =>
                                               <div className={styles.content}>
-                                                <div className={styles.title}>{tokenInfo.tokenName}</div>
+                                                <div className={styles.title}>
+                                                  <Button text onClick={this.showExchange.bind(this, tokenInfo)}>
+                                                    <div className={styles.title}>{tokenInfo.tokenName}</div>
+                                                  </Button>
+                                                </div>
                                         
                                                 <li className={styles.navItem}>
                                                   <li className={styles.auctionInfo}>
@@ -85,42 +94,7 @@ export default class MyTokens extends Component {
     return (
       <Row wrap justify="space-around" align="center" style={{margin: '20px', padding: '20px'}}>
         {
-          this.state.tokenData.length == 0 ? '' : (this.state.tokenData.length == 1) ? 
-            <div className={styles.content}>
-              <div className={styles.title}>Satoshi</div>
-      
-              <li className={styles.navItem}>
-                <li className={styles.auctionInfo}>
-                  <div className={styles.desc}>Created Time:</div>
-                </li>
-                <div className={styles.value}>21:14:12 01/02/2020</div>
-              </li>
-              <li className={styles.navItem}>
-                <li className={styles.auctionInfo}>
-                  <div className={styles.desc}>Auctioned Price:</div>
-                </li>
-                <div className={styles.value}>50000 QKC</div>
-              </li>
-              <li className={styles.navItem} style={{ width: '1050px'}}>
-                <li className={styles.navItem}>
-                  <li className={styles.auctionInfo}>
-                    <div className={styles.desc}>Total Supply:</div>
-                  </li>
-                  <div className={styles.value}>1000000</div>
-                </li>
-                <Button type='secondary' style={{ borderRadius: '100px', border: '2px solid #00C4FF', backgroundColor: '#00C4FF', 
-                  width: '120px', height: '50px', fontSize: '20px', color: '#FFFFFF', marginTop: '-30px'}} onClick={() =>  this.mintToken()}>                  
-                  Mint Token
-                </Button>
-              </li>
-            </div> 
-          : 
-          <div>
-            {
-              displayData.map(data => <Col span="24">{data}</Col>)
-            }
-          </div>
-          
+          this.state.tokenData.length == 0 ? '' : displayData.map(data => <Col span="24">{data}</Col>)          
         }
         
         <Dialog style={{ marginLeft: "20px" }}
@@ -133,7 +107,7 @@ export default class MyTokens extends Component {
           footerAlign='right'
           footer={this.state.mintTokenFooter}
         >
-          <Input style={{borderRadius: '100px', padding: '15px 32px', marginRight: '20px', marginLeft: 30, width: '250px', height: '25px'}} placeholder="Token Amount"/>
+          <Input style={{borderRadius: '8px', padding: '15px 32px', marginRight: '20px', marginLeft: 30, width: '380px', height: '72px', fontSize: '28px'}} placeholder="Token Amount"/>
           <p style={{fontSize: 20, lineHeight: '180%', marginRight: 30, marginLeft: 30}}>
           Mint as many new tokens as you want, once the mint transaction succeeded, you can find those new thokens on 
           your current address!
