@@ -168,7 +168,7 @@ export default class Exchange extends Component {
           footerAlign='right'
           footer={this.state.registerFooter}
         >
-          <Input style={{borderRadius: '4px', marginRight: '20px', marginLeft: 30, width: '85%', height: '72px'}} 
+          <Input size="large" style={{borderRadius: '4px', marginRight: '20px', marginLeft: 30, width: '85%'}} 
                  placeholder="Token Amount" addonTextAfter="Satoshi"/>
           <p style={{fontSize: 16, lineHeight: '180%', marginRight: 30, marginLeft: 30}}>
           A token must be registered in a specified shard to enable gas reserve operation. Sending any amount of the token to our system contract will complete registration. Continue to proceed?
@@ -185,9 +185,9 @@ export default class Exchange extends Component {
           footerAlign='right'
           footer={this.state.registerFooter}
         >
-          <Input style={{borderRadius: '4px', margin: '0 20px 20px 30px', width: '85%', height: '72px'}} 
+          <Input size="large" style={{borderRadius: '4px', margin: '0 20px 20px 30px', width: '85%'}} 
                  placeholder="Exchange Rate"/>
-          <Input style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%', height: '72px'}} 
+          <Input size="large" style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%', height: '72px'}} 
                 placeholder="Gas Reserve Amount"/>
           <p style={{fontSize: 14, color: '#FB7C6E', lineHeight: '180%', marginRight: 30, marginLeft: 30}}>
           Must be more than 500 QKC
