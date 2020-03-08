@@ -185,9 +185,9 @@ export default class Exchange extends Component {
           footerAlign='right'
           footer={this.state.registerFooter}
         >
-          <Input style={{borderRadius: '4px', margin: '0 20px 20px 30px', width: '85%', height: '72px'}} 
+          <Input style={{borderRadius: '4px', margin: '0 20px 20px 30px', width: '85%', height: '30px'}} 
                  placeholder="Exchange Rate"/>
-          <Input style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%', height: '72px'}} 
+          <Input style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%', height: '30px'}} 
                 placeholder="Gas Reserve Amount"/>
           <p style={{fontSize: 14, color: '#FB7C6E', lineHeight: '180%', marginRight: 30, marginLeft: 30}}>
           Must be more than 500 QKC
