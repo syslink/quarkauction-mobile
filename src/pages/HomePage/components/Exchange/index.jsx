@@ -152,7 +152,7 @@ export default class Exchange extends Component {
                   </Row>
                   <Row>
                     <Button text style={{ color: '#00C3FF', fontSize: '24px'}} onClick={() => shardInfo.func()}>                  
-                      {shardInfo.status}
+                      {shardInfo.status} >>
                     </Button>
                   </Row>
                 </div> )
@@ -187,7 +187,7 @@ export default class Exchange extends Component {
         >
           <Input size="large" style={{borderRadius: '4px', margin: '0 20px 20px 30px', width: '85%'}} 
                  placeholder="Exchange Rate"/>
-          <Input size="large" style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%', height: '72px'}} 
+          <Input size="large" style={{borderRadius: '4px', margin: '0 20px 0px 30px', width: '85%'}} 
                 placeholder="Gas Reserve Amount"/>
           <p style={{fontSize: 14, color: '#FB7C6E', lineHeight: '180%', marginRight: 30, marginLeft: 30}}>
           Must be more than 500 QKC
